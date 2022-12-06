@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&family=Roboto:wght@100&display=swap');
+
+
+:root{
+    --background-color:#ff3838;
+    --main-color:#6bc7de;
+    --black-color:#0e0e0e;
+    --border:0.1rem solid rgba(255,255,255,0.4)
+}
+/*
+border da olan solid yazımızın düz bir cizgi olacagını gosteriyor bıze.
+:root ile tum kısımlarda kullnacagımız bır yeri ana olarak belırtmıs olduk.
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none ;
+    text-decoration: none;
+    text-transform: capitalize ;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*
+ text-transform: capitalize ; bu tum yazılarımızın ilk harflerinin buyuk olmasını saglar bu 
+tür ozellıklerı google de aratabilirsin.
+*/
+
+/*
+transition: 0.3s ease; bu etiketimizin gecis suresini belirler direkt acılma yerine bellı bır zamanın gecmesını saglar.
+
+ font awesome ve font awesome cdn ile simgelerimizi yapmıs olduk.
+
+ yazı ailemiz icin google fonts tan yardım almıs olduk.
+*/
+
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden ;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+
+}
+/*
+burada bır rem 16px iken artık 1 rem 10 px olmus olur.Bu bırbırı yerıne cevırme sısıtemımız olmus olur.
+
+overflow-x:hidden ;bu tum html sayfamızda ekranımızın sag sola kaymasını kapatmıs olur sadece tek bır kalıp ekran kalmıs olur.
+*/
+
+body{
+ background: linear-gradient(to right,var(--main-color),var(--background-color))
+ 
+}
+/*
+ background: linear-gradient(to right,var(--main-color),var(--background-color)) bu renk gecıslerımızı saglamıs olur.
+
+var() ozelligini kullanarak onceden tanımlamıs oldugumuz oldugumuz özellikleri cagırmıs oluruz.
+*/
+
+
+/* header start*/
+
+.header .logo img{
+    height: 10rem;
+  }
+
+.header{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    margin: 2rem 7%;
+    border-radius: 30rem;
+    box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.75);
+    position: sticky;
+    top:0;
+    z-index: 1000;
+
+}
+
+/*header end */
+
+/*
+    position: sticky;
+    top:0;    -->bu kısmımız navbar yapımızın sabıt olarak kalmasını yanı ekranla bırlıkte gelmesını saglar.
+z-index: 1000; buda etiketimizin onune bısey gelmemesını saglar.
+
+
+
+display: flex; bu yazılarımızı yan yana almamızı saglar.
+align-items: center; buda yazımızı dik olarak ortalamamızı saglar.
+
+*/
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--black-color);
+    border-bottom: 0.1rem solid transparent;
+}
+.header .navbar .active,
+.header .navbar a:hover{
+    border-color: var(--main-color);
+    padding-bottom: 0.5rem;
+
+    /*
+    border-bottom: 0.1rem solid transparent; bu kısmın tam ust kısımda olmasının sebebı bır gecıs efektı vermek ıstememızdır.
+        border-color: var(--main-color);
+    padding-bottom: 0.5rem; ----> bunlarda oraua basınca altında olusacak renk efektlerı ıcın bıxze gosterilendır.
+    */
+}
+
+.header .buttons button{
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    background-color: transparent;
+    border: none;
+   
+}
+
+.home {
+    min-height: 100vh;
+    background: url(../assets/arkaplan.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -14.5rem;
+    display: flex;
+    align-items: center;
+    
+}
+/*
+background: url(../assets/balık-arka-plan.jpg); burada dosyaya erişim seklıne cok dııkat et.
+*/
+.btn{
+margin-top: 1rem;
+display: inline-block;
+padding: 2rem 3.75rem;
+border-radius: 30rem;
+font-size: 1.7rem;
+color:#fff;
+background-color: var(--black-color);
+cursor: pointer;
+object-fit: contain;
+}
+/*
+bu butonda yıne aynı sekılde tum her tarafımızı etkıleyecek bır yapıdır.
+*/
+
+section{
+    padding: 3.5rem 7%;
+}
+/*
+section icinde olan tum kısımlarımızın aynı hızada olması ıcın yaparız. 
+*/
+
+
+
+.home .kutu{
+    max-width: 60rem;    
+}
+
+.home .kutu h3{
+    font-size: 6rem;
+    color: #fff;
+}
+
+.home .kutu p{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: rgb(255, 255, 255);
+}
+/*
+ line-height: 1.8; bu satır arası boslugumuz boyutu demektır.
+*/
+
+/*menu start*/
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    gap: 1.5rem;
+    
+}
+.box-container .box img{
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.cizgi{
+    margin:2rem 0rem ;
+}
+
+.menü h1{
+font-size: 4rem;
+color: #fff;
+margin-bottom: 2rem;
+text-align: center;
+
+
+}
+
+
+.menü .box-container .box{
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+.menü .box-container .box .menu-category{
+    font-size: 1.2rem;
+        
+}
+.menü .box-container .box h3{
+    font-size: 3rem;
+    padding: 1rem 0;
+    
+    
+}
+
+
+.menü .box-container .box .fiyat{
+    font-size: 2.5rem;
+    padding: 0.5rem 0 ;
+    
+}
+
+.menü .box-container .box .fiyat span{
+    text-decoration: line-through;
+    font-size: 1.5rem;
+    font-weight: 30rem;
+}
+/*
+belirlenen yazı yerımızın ustunu çizer.
+*/
+
+
+/*menu end*/
+
+
+
+
+
